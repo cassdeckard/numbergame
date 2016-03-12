@@ -15,15 +15,15 @@ angular.module('myApp.number', ['ngRoute'])
 
   this.reroll = function() {
     shuffle($scope.numArray);
-      $scope.targetNumber = $scope.numArray[randomInt(0, 4)];
-      $scope.targetAudioFilename = 'media/' + $scope.targetNumber + '.m4a';
-      $scope.targetAudio = ngAudio.load($scope.targetAudioFilename);
+    $scope.targetNumber = $scope.numArray[randomInt(0, 4)];
+    $scope.targetAudioFilename = 'media/' + $scope.targetNumber + '.m4a';
+    $scope.targetAudio = ngAudio.load($scope.targetAudioFilename);
   }
 
   this.triggerWin = function() {
     this.onWin();
   }
-
+  
   this.onWin = function() {
     $timeout(function() { $window.alert('GOOD JOB!'); });
     this.reroll();
