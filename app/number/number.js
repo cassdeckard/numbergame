@@ -10,8 +10,16 @@ angular.module('myApp.number', ['ngRoute'])
   });
 }])
 
-.controller('NumberCtrl', [function() {
+.controller('NumberCtrl', ['$scope', '$window', '$timeout', function($scope, $window, $timeout) {
   this.randomInt = function() {
     return Math.floor((Math.random()*6)+1);
+  }
+
+  this.triggerWin = function() {
+    this.onWin();
+  }
+
+  this.onWin = function() {
+    $timeout(function() { $window.alert('GOOD JOB!'); });
   }
 }]);
