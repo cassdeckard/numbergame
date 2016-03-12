@@ -27,6 +27,12 @@ angular.module('myApp.number', ['ngRoute'])
     this.reroll();
   }
 
+  this.select = function(num) {
+    if (num === $scope.targetNumber) {
+      this.triggerWin();
+    }
+  }
+
   function randomInt() {
     return Math.floor((Math.random()*6)+1);
   }
