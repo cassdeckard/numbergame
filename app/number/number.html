@@ -1,2 +1,4 @@
 <div ng-init="ctrl.reroll()"></div>
-<h1 ng-repeat="num in numArray.slice(0, 4)" ng-click="ctrl.select(num)">{{ num }}</h1>
+<ul>
+  <li ng-repeat="num in numArray.slice(0, 4)"><h1 ng-click="ctrl.select(num)">{{ num }}</h1></li>
+</ul>
