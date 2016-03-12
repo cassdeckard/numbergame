@@ -15,7 +15,7 @@ angular.module('myApp.number', ['ngRoute'])
 
   this.reroll = function() {
     shuffle($scope.numArray);
-      $scope.targetNumber = $scope.numArray[0];
+      $scope.targetNumber = $scope.numArray[randomInt(0, 4)];
   }
 
   this.triggerWin = function() {
@@ -33,8 +33,8 @@ angular.module('myApp.number', ['ngRoute'])
     }
   }
 
-  function randomInt() {
-    return Math.floor((Math.random()*6)+1);
+  function randomInt(min, range) {
+    return Math.floor((Math.random() * range) + min);
   }
 
   function shuffle(array) {
