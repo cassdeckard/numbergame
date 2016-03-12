@@ -1,4 +1,5 @@
 <div ng-init="ctrl.reroll()"></div>
+<button ng-click="targetAudio.play()">PLAY</button>
 <ul>
   <li ng-repeat="num in numArray.slice(0, 4)"><h1 ng-click="ctrl.select(num)">{{ num }}</h1></li>
 </ul>

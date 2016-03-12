@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.number',
-  'myApp.version'
+  'myApp.version',
+  'ngAudio'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/number'});
