@@ -11,8 +11,8 @@ angular.module('myApp.number', ['ngRoute'])
 }])
 
 .controller('NumberCtrl', ['$scope', '$window', '$timeout', function($scope, $window, $timeout) {
-  this.randomInt = function() {
-    return Math.floor((Math.random()*6)+1);
+  this.reroll = function() {
+    $scope.targetNumber = randomInt();
   }
 
   this.triggerWin = function() {
@@ -21,5 +21,10 @@ angular.module('myApp.number', ['ngRoute'])
 
   this.onWin = function() {
     $timeout(function() { $window.alert('GOOD JOB!'); });
+    this.reroll();
+  }
+
+  function randomInt() {
+    return Math.floor((Math.random()*6)+1);
   }
 }]);
