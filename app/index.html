@@ -17,24 +17,25 @@
 <body>
 
   <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <div ng-view></div>
 
-  <div>Number game: v<span app-version></span></div>
-  <div><a href="https://www.freesound.org/people/xtrgamr/sounds/252808/">"yay" sound</a> courtesy of <a href="https://www.freesound.org/people/xtrgamr/">xtrgamr</a>, used with <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons attribution license</a></div>
-
+  <div id="footer">
+    <div>Number game: v<span app-version></span></div>
+    <div><a href="https://www.freesound.org/people/xtrgamr/sounds/252808/">"yay" sound</a> courtesy of <a href="https://www.freesound.org/people/xtrgamr/">xtrgamr</a>, used with <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons attribution license</a></div>
+  </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-audio/app/angular.audio.js"></script>
-  <script src="app.js"></script>
-  <script src="number/number.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+<script src="app.js"></script>
+<script src="number/number.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>
