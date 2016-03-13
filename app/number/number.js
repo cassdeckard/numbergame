@@ -20,6 +20,7 @@ angular.module('myApp.number', ['ngRoute'])
     $scope.targetAudio = ngAudio.load($scope.targetAudioFilename);
     $scope.winAudio = ngAudio.load('media/yay.wav');
     $scope.winAudio.volume = 0.25;
+    $scope.loseAudio = ngAudio.load('media/no.m4a');
     $scope.targetAudio.play();
   }
 
@@ -35,6 +36,9 @@ angular.module('myApp.number', ['ngRoute'])
   this.select = function(num) {
     if (num === $scope.targetNumber) {
       this.triggerWin();
+    }
+    else {
+      $scope.loseAudio.play();
     }
   }
 
