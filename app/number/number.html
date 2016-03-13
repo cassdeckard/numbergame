@@ -1,5 +1,5 @@
 <div ng-init="ctrl.reroll()"></div>
-<button ng-click="targetAudio.play()">PLAY</button>
+<button ng-click="targetAudio.play()" style="font-size: 32px"> ? ? ? </button>
 <ul>
-  <li ng-repeat="num in numArray.slice(0, 4)"><h1 ng-click="ctrl.select(num)">{{ num }}</h1></li>
+  <li ng-repeat="num in numArray.slice(0, 4)" style="background-color: #aaf"><a href="#"><h1 ng-click="ctrl.select(num)" style="font-size: 64px">{{ num }}</h1></a></li>
 </ul>
