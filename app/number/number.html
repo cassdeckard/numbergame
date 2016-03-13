@@ -1,8 +1,8 @@
 <div ng-init="ctrl.reroll()">
-  <button ng-click="targetAudio.play()" class="play-target-button"> ? ? ? </button>
+  <button ng-click="targetNumber.audio.play()" class="play-target-button"> ? ? ? </button>
   <div id="grid-container">
-    <div ng-repeat="num in numArray.slice(0, 4)" class="button-container">
-      <button ng-click="ctrl.select(num)">{{ num }}</button>
+    <div ng-repeat="numObj in numObjects.slice(0, 4)" class="button-container">
+      <button ng-click="ctrl.select(numObj.val)">{{ numObj.val }}</button>
     </div>
   </div>
 </div>

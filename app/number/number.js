@@ -11,17 +11,23 @@ angular.module('myApp.number', ['ngRoute'])
 }])
 
 .controller('NumberCtrl', ['$scope', '$timeout', 'ngAudio', function($scope, $timeout, ngAudio) {
-  $scope.numArray = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  $scope.numObjects = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function(num) {
+    var filename = 'media/' + num + '.m4a';
+    var audio = ngAudio.load(filename);
+    return {
+      val: num,
+      audio: audio
+    }
+  });
 
   this.reroll = function() {
-    shuffle($scope.numArray);
-    $scope.targetNumber = $scope.numArray[randomInt(0, 4)];
-    $scope.targetAudioFilename = 'media/' + $scope.targetNumber + '.m4a';
-    $scope.targetAudio = ngAudio.load($scope.targetAudioFilename);
+    shuffle($scope.numObjects);
+    var targetIdx = randomInt(0, 4);
+    $scope.targetNumber = $scope.numObjects[targetIdx];
     $scope.winAudio = ngAudio.load('media/yay.wav');
     $scope.winAudio.volume = 0.25;
     $scope.loseAudio = ngAudio.load('media/no.m4a');
-    $scope.targetAudio.play();
+    $scope.targetNumber.audio.play();
   }
 
   this.triggerWin = function() {
@@ -34,7 +40,7 @@ angular.module('myApp.number', ['ngRoute'])
   }
 
   this.select = function(num) {
-    if (num === $scope.targetNumber) {
+    if (num === $scope.targetNumber.val) {
       this.triggerWin();
     }
     else {
